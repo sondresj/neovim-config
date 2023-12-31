@@ -1,6 +1,9 @@
 # Neovim Config
 
+Somewhat based on this guide: https://youtu.be/zHTeCSVAFNY?si=Mh2CgvhISSIFFmEO
+
 ## Requirements
+
 - Nerd font: I prefer Jetbrains Mono NerdFont. This enables some of the plugins to use icons
 - ripgrep: for fuzzy finding using telescope
 - a terminal that supports a full color-space (not just 256-bit).
