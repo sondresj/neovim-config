@@ -21,7 +21,9 @@ return {
             suggestions = { enabled = false },
             panel = { enabled = false, }
         })
-        require("copilot_cmp").setup()
+        require("copilot_cmp").setup({
+            fix_pairs = true,
+        })
 
         local cmp = require("cmp")
         cmp.setup({
