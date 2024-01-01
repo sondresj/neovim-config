@@ -32,19 +32,21 @@ return {
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
                 callback = function(ev)
-                    local opts = { buffer = ev.buf }
-                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-                    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-                    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-                    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-                    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-                    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                    local desc = function(s)
+                        return { buffer = ev.buf, desc = s }
+                    end
+                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, desc("Go to declaration"))
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, desc("Go to definition"))
+                    vim.keymap.set('n', 'K', vim.lsp.buf.hover, desc("Hover"))
+                    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, desc("Go to implementation"))
+                    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, desc("Show signature help"))
+                    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, desc("Type definition"))
+                    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, desc("Rename identifier"))
+                    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, desc("Show code actions"))
+                    vim.keymap.set('n', 'gr', vim.lsp.buf.references, desc("Go to references"))
                     vim.keymap.set('n', '<space>f', function()
                         vim.lsp.buf.format { async = true }
-                    end, opts)
+                    end, desc("Format buffer"))
                 end,
             })
         end,
