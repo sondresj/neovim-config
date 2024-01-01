@@ -12,7 +12,6 @@ vim.keymap.set('n', "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all (:qa)" })
 
 -- Code
 vim.keymap.set('n', "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostics" })
-vim.keymap.set('n', "<leader>rn", vim.lsp.buf.rename, { desc = "Rename identifier under cursor" })
 -- note: there are many more keymappings in plugins/lsp.lua
 
 -- Line movement (insert mode sift arrows to move line)
