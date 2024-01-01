@@ -1,5 +1,6 @@
 return {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     dependencies = {
         -- Snippet Engine & its associated nvim-cmp source
         'L3MON4D3/LuaSnip',
@@ -13,6 +14,9 @@ return {
         "zbirenbaum/copilot.lua",
         "zbirenbaum/copilot-cmp",
         "AndreM222/copilot-lualine",
+
+        -- Icons for suggestions source
+        "onsails/lspkind.nvim",
     },
     lazy = false,
     config = function()
@@ -25,6 +29,7 @@ return {
             fix_pairs = true,
         })
 
+        local lspkind = require("lspkind")
         local cmp = require("cmp")
         cmp.setup({
             window = {
@@ -50,6 +55,16 @@ return {
             }, {
                 { name = "buffer" },
             }),
+            formatting = {
+                format = lspkind.cmp_format({
+                    mode = "symbol_text",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                    before = function(_entry, vim_item)
+                        return vim_item
+                    end,
+                }),
+            },
         })
     end,
 }

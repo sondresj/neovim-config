@@ -1,11 +1,10 @@
-
 vim.o.number = true
 vim.o.relativenumber = true
 
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.o.softtabstop = 4 
+vim.o.softtabstop = 4
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
@@ -34,5 +33,5 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 vim.o.completeopt = 'menuone,noselect'
-vim.o.termguicolors = true 
+vim.o.termguicolors = true
 

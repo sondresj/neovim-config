@@ -9,8 +9,8 @@ return {
                 -- null_ls.builtins.formatting.lua_format,
                 -- null_ls.builtins.formatting.stylelua,
 
-                null_ls.builtins.diagnostics.markdownlint,
-                null_ls.builtins.formatting.markdownlint,
+                -- null_ls.builtins.diagnostics.markdownlint,
+                -- null_ls.builtins.formatting.markdownlint,
 
                 null_ls.builtins.diagnostics.shellcheck,
                 null_ls.builtins.formatting.shellharden,

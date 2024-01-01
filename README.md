@@ -25,5 +25,10 @@ Lazy has a convention that allows to structure the plugins and it's configuratio
 These must be in the `lua/plugins` directory. Lazy will then load all .lua files in there, and merge the returned tables into one, table of plugins that lazy should intall.
 
 ## Coplit
+
 To enable Copilot, you must authenticate it, run `:Copilot auth` and follow the instructions
+
+## TODO:
+
+- Terminal mappings (mvp: in window splits. nth: floating and persistant)
 
