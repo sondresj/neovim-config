@@ -8,9 +8,21 @@ return {
         -- Adds LSP completion capabilities
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
+
+        -- Copilot
+        "zbirenbaum/copilot.lua",
+        "zbirenbaum/copilot-cmp",
+        "AndreM222/copilot-lualine",
     },
     lazy = false,
     config = function()
+        require("copilot").setup({
+            -- use nvim-cmp panel instead
+            suggestions = { enabled = false },
+            panel = { enabled = false, }
+        })
+        require("copilot_cmp").setup()
+
         local cmp = require("cmp")
         cmp.setup({
             window = {
@@ -30,6 +42,7 @@ return {
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
+                { name = "copilot" },
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
             }, {
