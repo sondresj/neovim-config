@@ -35,6 +35,7 @@ return {
                     local desc = function(s)
                         return { buffer = ev.buf, desc = s }
                     end
+                    vim.keymap.set('n', "<leader>e", vim.diagnostic.open_float, desc("Open diagnostics"))
                     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, desc("Go to declaration"))
                     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, desc("Go to definition"))
                     vim.keymap.set('n', 'K', vim.lsp.buf.hover, desc("Hover"))

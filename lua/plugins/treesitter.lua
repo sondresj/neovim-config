@@ -38,17 +38,17 @@ return {
                         },
                         include_surrounding_whitespace = true,
                     },
-                   -- swap = {
-                   --     enable = true,
-                   --     swap_next = {
-                   --         ["<leader>w"] = "@parameter.inner",
-                   --     },
-                   --     swap_previous = {
-                   --         ["<leader>W"] = "@parameter.inner",
-                   --     },
-                   -- },
+                    -- swap = {
+                    --     enable = true,
+                    --     swap_next = {
+                    --         ["<leader>w"] = "@parameter.inner",
+                    --     },
+                    --     swap_previous = {
+                    --         ["<leader>W"] = "@parameter.inner",
+                    --     },
+                    -- },
                 },
             })
         end,
-    }, 
+    },
 }

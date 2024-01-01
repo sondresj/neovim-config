@@ -6,7 +6,7 @@ return {
             -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
             sources = {
                 -- null_ls.builtins.diagnostics.luacheck,
-                null_ls.builtins.formatting.lua_format,
+                -- null_ls.builtins.formatting.lua_format,
                 -- null_ls.builtins.formatting.stylelua,
 
                 null_ls.builtins.diagnostics.markdownlint,
@@ -15,7 +15,7 @@ return {
                 null_ls.builtins.diagnostics.shellcheck,
                 null_ls.builtins.formatting.shellharden,
                 null_ls.builtins.formatting.shfmt,
-                
+
                 null_ls.builtins.diagnostics.markuplint,
                 null_ls.builtins.diagnostics.stylelint,
                 null_ls.builtins.formatting.stylelint,

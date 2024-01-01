@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set('n', "<space>", "<Nop>")
 
 -- note: the following is not all keymappings, some are also set up for plugins, which cannot be mapped here.
--- todo: add { desc = "DESCRIPTION HERE"} for all mappings
+-- In particular, Code mappings reside in plugins/lsp.lua
 
 -- General mappings
 vim.keymap.set({ 'i', 'v' }, "<C-c>", "<Esc>")                                -- don't force kill terminal app, just esc instead
@@ -10,9 +10,6 @@ vim.keymap.set({ 'i', 'n', 'v' }, "<C-s>", "<cmd>wa<CR>", { desc = "Save all mod
 vim.keymap.set({ 'i', 'n' }, "<esc>", "<cmd>noh<CR><esc>", { silent = true }) -- clear search on esc
 vim.keymap.set('n', "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all (:qa)" })
 
--- Code
-vim.keymap.set('n', "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostics" })
--- note: there are many more keymappings in plugins/lsp.lua
 
 -- Line movement (insert mode sift arrows to move line)
 vim.keymap.set('n', "<S-Up>", "<cmd>m .-2<CR>==", { desc = "Move line up" })
