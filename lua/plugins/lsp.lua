@@ -28,7 +28,6 @@ return {
             })
             lspconfig.tsserver.setup({})
 
-            vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -48,7 +47,6 @@ return {
                     end, opts)
                 end,
             })
-
         end,
     }
 }

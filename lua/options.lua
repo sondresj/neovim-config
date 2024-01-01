@@ -1,32 +1,38 @@
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 
-vim.opt.softtabstop = 4 
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.o.softtabstop = 4 
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 
-vim.opt.smartindent = true
-vim.opt.wrap = false
+vim.o.smartindent = true
+vim.o.wrap = false
 
-vim.opt.clipboard = "unnamedplus"
+vim.o.clipboard = "unnamedplus"
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undofile = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+vim.o.hlsearch = false
+vim.o.incsearch = true
 
-vim.opt.scrolloff = 999
+vim.o.scrolloff = 999
 
-vim.opt.virtualedit = "block"
+vim.o.mouse = 'a'
+vim.o.virtualedit = "block"
 
-vim.opt.ignorecase = true
-vim.opt.termguicolors = true 
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
+
+vim.o.completeopt = 'menuone,noselect'
+vim.o.termguicolors = true 
 
