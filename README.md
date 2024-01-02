@@ -28,7 +28,3 @@ These must be in the `lua/plugins` directory. Lazy will then load all .lua files
 
 To enable Copilot, you must authenticate it, run `:Copilot auth` and follow the instructions
 
-## TODO:
-
-- Terminal mappings (mvp: in window splits. nth: floating and persistant)
-
