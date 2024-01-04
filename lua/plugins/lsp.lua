@@ -2,6 +2,7 @@ local servers = { "lua_ls", "rust_analyzer", "tsserver", "eslint", "csharp_ls" }
 return {
     {
         "williamboman/mason.nvim",
+        priority = 52,
         lazy = false,
         config = function()
             require("mason").setup()
@@ -9,18 +10,21 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
+        priority = 53,
         lazy = false,
-        config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = servers,
-                automatic_installation = {
-                    exclude = servers,
-                }
-            })
-        end,
+        opts = {
+            ensure_installed = servers,
+            automatic_installation = {
+                exclude = servers,
+            }
+        },
     },
     {
         "neovim/nvim-lspconfig",
+        priority = 51,
+        dependencies = {
+            'simrat39/rust-tools.nvim',
+        },
         lazy = false,
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -31,6 +35,12 @@ return {
                     capabilities = capabilities,
                 }
             end
+
+            require("rust-tools").setup({
+                server = {
+                    capabilities = capabilities,
+                }
+            })
 
             vim.api.nvim_create_autocmd('LspAttach', {
                 group = vim.api.nvim_create_augroup('UserLspConfig', {}),

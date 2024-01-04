@@ -1,5 +1,6 @@
 return {
     "hrsh7th/nvim-cmp",
+    priority = 54,
     event = "InsertEnter",
     dependencies = {
         -- Snippet Engine & its associated nvim-cmp source
@@ -9,6 +10,9 @@ return {
         -- Adds LSP completion capabilities
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
+        'hrsh7th/cmp-nvim-lsp-signature-help',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-nvim-lua',
 
         -- Copilot
         "zbirenbaum/copilot.lua",
@@ -51,7 +55,10 @@ return {
             sources = cmp.config.sources({
                 { name = "copilot" },
                 { name = "nvim_lsp" },
+                { name = "nvim_lsp_signature_help" },
+                { name = "nvim_lua" },
                 { name = "luasnip" },
+                { name = "path" },
             }, {
                 { name = "buffer" },
             }),
