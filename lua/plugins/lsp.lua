@@ -30,8 +30,8 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local lspconfig = require("lspconfig")
 
-            for _, lsp in ipairs(servers) do
-                lspconfig[lsp].setup {
+            for _, server in ipairs(servers) do
+                lspconfig[server].setup {
                     capabilities = capabilities,
                 }
             end
@@ -54,11 +54,11 @@ return {
                     vim.keymap.set('n', 'K', vim.lsp.buf.hover, desc("Hover"))
                     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, desc("Go to implementation"))
                     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, desc("Show signature help"))
-                    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, desc("Type definition"))
-                    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, desc("Rename identifier"))
-                    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, desc("Show code actions"))
+                    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, desc("Type definition"))
+                    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, desc("Rename identifier"))
+                    vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, desc("Show code actions"))
                     vim.keymap.set('n', 'gr', vim.lsp.buf.references, desc("Go to references"))
-                    vim.keymap.set('n', '<space>f', function()
+                    vim.keymap.set('n', '<leader>f', function()
                         vim.lsp.buf.format { async = true }
                     end, desc("Format buffer"))
                 end,

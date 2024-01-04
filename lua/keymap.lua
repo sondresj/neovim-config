@@ -27,6 +27,8 @@ map('n', "<leader>bd", "<cmd>bd<CR>", { desc = "Close buffer" })
 map('n', "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer" })
 map('n', "<S-Left>", "<cmd>bprevious<CR>", { desc = "Go to left buffer" })
 map('n', "<S-Right>", "<cmd>bnext<CR>", { desc = "Go to right buffer" })
+map('n', "<S-h>", "<cmd>bprevious<CR>", { desc = "Go to left buffer" })
+map('n', "<S-l>", "<cmd>bnext<CR>", { desc = "Go to right buffer" })
 
 -- Window management
 map('n', "<leader>wd", "<C-W>c", { desc = "Close window" })
