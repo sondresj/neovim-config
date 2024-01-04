@@ -11,7 +11,7 @@ map({ 'i', 'v' }, "<C-c>", "<Esc>")                                -- don't forc
 map({ 'i', 'n', 'v' }, "<C-s>", "<cmd>wa<CR>", { desc = "Save all modified buffers (:wa)" })
 map({ 'i', 'n' }, "<esc>", "<cmd>noh<CR><esc>", { silent = true }) -- clear search on esc
 map('n', "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all (:qa)" })
-map('n', "<leader>e", "<cmd>Ex<CR>", { desc = "Enter NetRW explorer (:help :Ex)" })
+-- map('n', "<leader>e", "<cmd>Ex<CR>", { desc = "Enter NetRW explorer (:help :Ex)" })
 
 
 -- Line movement (insert mode sift arrows to move line)
