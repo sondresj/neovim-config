@@ -2,7 +2,6 @@ local servers = { "lua_ls", "rust_analyzer", "tsserver", "eslint", "csharp_ls", 
 return {
     {
         "williamboman/mason.nvim",
-        priority = 52,
         lazy = false,
         config = function()
             require("mason").setup()
@@ -10,7 +9,6 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        priority = 53,
         lazy = false,
         opts = {
             ensure_installed = servers,
@@ -21,7 +19,6 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        priority = 51,
         dependencies = {
             'simrat39/rust-tools.nvim',
             'Decodetalkers/csharpls-extended-lsp.nvim',
@@ -43,15 +40,14 @@ return {
                     capabilities = capabilities,
                 }
             })
-           
-            local pid = vim.fn.getpid() 
+
+            local pid = vim.fn.getpid()
             local csharp_ls_bin = vim.fn.expand("$HOME") .. "/.dotnet/tools/csharp-ls.exe"
-            local omnisharp_bin = vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll"
+            local omnisharp_dll = vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll"
 
             if vim.fn.has("macunix") then
-                local csharp_ls_bin = vim.fn.expand("$HOME") .. "/.dotnet/tools/csharp-ls" -- todo, need to verify this is correct on linux
-                local omnisharp_bin = vim.fn.stdpath("data") .. "/mason/bin/omnisharp.cmd"
-            end 
+                csharp_ls_bin = vim.fn.expand("$HOME") .. "/.dotnet/tools/csharp-ls"
+            end
 
             -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#omnisharp
             lspconfig.omnisharp.setup({
@@ -60,7 +56,7 @@ return {
                     ["textDocument/definition"] = require("csharpls_extended").handler,
                     ["textDocument/typeDefinition"] = require("csharpls_extended").handler,
                 },
-                cmd = { "dotnet", omnisharp_bin }, -- hopefully works on linux, mac and windows,
+                cmd = { "dotnet", omnisharp_dll },
                 enable_editorconfig_support = true,
                 enable_ms_build_load_projects_on_demand = false,
                 enable_roslyn_analyzers = true,

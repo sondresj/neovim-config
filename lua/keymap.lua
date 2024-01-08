@@ -8,8 +8,7 @@ map('n', "<space>", "<nop>")
 
 -- General mappings
 map({ 'i', 'v' }, "<C-c>", "<Esc>")                                -- don't force kill terminal app, just esc instead
-map({ 'i', 'n', 'v' }, "<C-s>", "<cmd>w<CR>", { desc = "Save buffer (:w)" })
-map({ 'i', 'n', 'v' }, "<C-S>", "<cmd>wa<CR>", { desc = "Save all buffers (:wa)" })
+map({ 'i', 'n', 'v' }, "<C-s>", "<cmd>wa<CR>", { desc = "Save all buffers (:wa)" })
 map({ 'i', 'n' }, "<esc>", "<cmd>noh<CR><esc>", { silent = true }) -- clear search on esc
 map('n', "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all (:qa)" })
 map('n', "Q", "<nop>", { silent = true, desc = "Prevent Q mode" })

@@ -1,6 +1,5 @@
 return {
     "hrsh7th/nvim-cmp",
-    priority = 54,
     event = "InsertEnter",
     dependencies = {
         -- Snippet Engine & its associated nvim-cmp source
