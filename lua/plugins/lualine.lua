@@ -2,12 +2,11 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "shaunsingh/nord.nvim",
     },
     config = function()
         require("lualine").setup({
             options = {
-                theme = "nord"
+                theme = "tokyonight",
             },
             sections = {
                 lualine_a = { 'mode' },

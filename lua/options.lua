@@ -10,7 +10,7 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
 vim.o.smartindent = true
-vim.o.wrap = false
+vim.o.wrap = true
 
 vim.o.clipboard = "unnamedplus"
 
