@@ -1,3 +1,5 @@
 return {
-    'echasnovski/mini.completion',
+	"echasnovski/mini.completion",
+	version = false,
+	opts = {},
 }
