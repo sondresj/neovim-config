@@ -1,5 +1,5 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = "å"
+vim.g.mapleader = vim.keycode("<space>")
+vim.g.maplocalleader = vim.keycode("<cr>")
 
 vim.o.termguicolors = true
 vim.g.have_nerd_font = true
@@ -11,7 +11,8 @@ vim.o.mouse = "a"
 vim.o.virtualedit = "block"
 
 vim.o.clipboard = "unnamedplus"
-vim.o.completeopt = "menu,menuone,noselect"
+vim.o.completeopt = "menu,menuone,noselect,popup,fuzzy"
+vim.o.pumheight = 10
 
 vim.o.undofile = true
 vim.o.undolevels = 10000
@@ -24,7 +25,7 @@ vim.o.smartcase = true
 vim.o.signcolumn = "yes"
 
 vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 800
 
 vim.o.splitright = true
 vim.o.splitbelow = true

@@ -31,3 +31,15 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
 map("n", "<leader>tv", "<cmd>:vsplit term://fish<CR>", { desc = "Open new terminal" })
 map("n", "<leader>th", "<cmd>:split term://fish<CR>", { desc = "Open new terminal" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Enter Normal Mode (in terminal)" })
+
+-- fuzzyfind
+map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Fuzzyfind files" })
+map("n", "<leader>fr", "<cmd>FzfLua resume<CR>", { desc = "Fuzzyfind resume" })
+map("n", "<leader>fh", "<cmd>FzfLua helptags<CR>", { desc = "Fuzzyfind helptags" })
+map("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", { desc = "Fuzzyfind buffers" })
+map("n", "<leader>fg", "<cmd>FzfLua live_grep_native<CR>", { desc = "Fuzzyfind grep" })
+map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", { desc = "Fuzzyfind keymaps" })
+
+-- copilot
+-- map("n", "<leader>cpp", "<cmd>Copilot panel open<CR>", { desc = "Open Copilot panel" })
+-- map("n", "<leader>cpd", "<cmd>Copilot panel close<CR>", { desc = "Close Copilot panel" })
