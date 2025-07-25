@@ -80,6 +80,8 @@ return {
 					-- or a suggestion from your LSP for this to activate.
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 
+					map("<leader>cd", vim.diagnostic.open_float, "[C]ode [D]iagnostics")
+
 					-- Find references for the word under your cursor.
 					map("gr", "<cmd>FzfLua lsp_references<CR>", "[G]oto [R]eferences")
 
@@ -221,7 +223,10 @@ return {
 				-- clangd = {},
 				-- gopls = {},
 				-- pyright = {},
-				rust_analyzer = {},
+				-- ["rust-analyzer"] = {
+				rust_analyzer = {
+					cmd = { "clippy" },
+				},
 				denols = {},
 
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -266,6 +271,16 @@ return {
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
 			})
+			vim.lsp.config("rust_analyzer", {
+				settings = {
+					["rust-analyzer"] = {
+						check = {
+							command = "clippy",
+						},
+					},
+				},
+			})
+			vim.lsp.enable("rust_analyzer")
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 			require("mason-lspconfig").setup({
@@ -278,7 +293,11 @@ return {
 						-- by the server configuration above. Useful when disabling
 						-- certain features of an LSP (for example, turning off formatting for ts_ls)
 						-- server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
+						-- require("lspconfig")[server_name].setup(server)
+						vim.lsp.config(server_name, {
+							settings = server,
+						})
+						vim.lsp.enable(server_name)
 					end,
 				},
 			})
