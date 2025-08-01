@@ -6,7 +6,7 @@ map({ "i", "v" }, "<C-c>", "<Esc>")
 map({ "i", "n", "v" }, "<C-s>", "<cmd>wa<CR>", { desc = "Save all buffers (:wa)" })
 map("n", "Q", "<nop>")
 map("n", "<space>", "<nop>")
-map("x", "<leader>p", [['_dP]], { desc = "Paste without replacing yanked text" })
+map("x", "<leader>p", [["_dP]], { desc = "Paste without replacing yanked text" })
 -- map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
 
 -- buffer
