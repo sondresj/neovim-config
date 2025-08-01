@@ -14,9 +14,10 @@ map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Prev buffer" })
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer" })
 map("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Close buffer" })
-map("n", "<leader>bo", require("util.buffers").delete_others, { desc = "Close other buffers" })
-map("n", "<leader>bl", require("util.buffers").delete_left, { desc = "Close left buffers" })
-map("n", "<leader>br", require("util.buffers").delete_right, { desc = "Close right buffers" })
+map("n", "<leader>bo", require("util.buffers").close_others, { desc = "Close other buffers" })
+map("n", "<leader>bl", require("util.buffers").close_left, { desc = "Close left buffers" })
+map("n", "<leader>br", require("util.buffers").close_right, { desc = "Close right buffers" })
+map("n", "<leader>bp", require("util.buffers").close_unmodified, { desc = "Close buffers not modified" })
 
 -- window
 map("n", "<leader>wd", "<C-W>c", { desc = "Close window" })

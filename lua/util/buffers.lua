@@ -9,24 +9,30 @@ function M.delete_bufs(predicate)
 	end
 end
 
-function M.delete_others()
+function M.close_others()
 	local cur_buf = vim.api.nvim_get_current_buf()
 	M.delete_bufs(function(b)
 		return b ~= cur_buf
 	end)
 end
 
-function M.delete_left()
+function M.close_left()
 	local cur_buf = vim.api.nvim_get_current_buf()
 	M.delete_bufs(function(b)
 		return b < cur_buf
 	end)
 end
 
-function M.delete_right()
+function M.close_right()
 	local cur_buf = vim.api.nvim_get_current_buf()
 	M.delete_bufs(function(b)
 		return b > cur_buf
+	end)
+end
+
+function M.close_unmodified()
+	M.delete_bufs(function(b)
+		return not vim.bo[b].modified
 	end)
 end
 
