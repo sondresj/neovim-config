@@ -13,7 +13,7 @@ map("x", "<leader>p", [["_dP]], { desc = "Paste without replacing yanked text" }
 map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Prev buffer" })
 map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 map("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer" })
-map("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Close buffer" })
+map("n", "<leader>bd", "<cmd>bd!<CR>", { desc = "Close buffer" })
 map("n", "<leader>bo", require("util.buffers").close_others, { desc = "Close other buffers" })
 map("n", "<leader>bl", require("util.buffers").close_left, { desc = "Close left buffers" })
 map("n", "<leader>br", require("util.buffers").close_right, { desc = "Close right buffers" })
@@ -29,6 +29,7 @@ map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
 
 -- terminal
+map("n", "<leader>tt", "<cmd>:vsplit term://fish<CR>", { desc = "Open new terminal" })
 map("n", "<leader>tv", "<cmd>:vsplit term://fish<CR>", { desc = "Open new terminal" })
 map("n", "<leader>th", "<cmd>:split term://fish<CR>", { desc = "Open new terminal" })
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Enter Normal Mode (in terminal)" })

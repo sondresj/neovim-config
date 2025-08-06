@@ -1,6 +1,8 @@
 vim.g.mapleader = vim.keycode("<space>")
 vim.g.maplocalleader = vim.keycode("<cr>")
 
+vim.o.winborder = "rounded"
+
 vim.o.termguicolors = true
 vim.g.have_nerd_font = true
 
@@ -54,5 +56,5 @@ vim.o.list = true
 vim.o.ruler = false
 vim.o.wrap = true
 
-vim.lsp.inlay_hint.enable(false, nil)
+-- vim.lsp.inlay_hint.enable(false, nil)
 vim.o.smoothscroll = true
