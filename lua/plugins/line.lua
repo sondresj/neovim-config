@@ -1,15 +1,15 @@
 return {
 	{
-		"echasnovski/mini.statusline",
+		"nvim-mini/mini.statusline",
 		dependencies = {
 			-- { "echasnovski/mini.git", version = false, opts = {} },
-			{ "echasnovski/mini.diff", version = false, opts = {} },
+			{ "nvim-mini/mini.diff", version = false, opts = {} },
 		},
 		opts = {},
 		version = false,
 	},
 	{
-		"echasnovski/mini.tabline",
+		"nvim-mini/mini.tabline",
 		opts = {},
 		version = false,
 	},

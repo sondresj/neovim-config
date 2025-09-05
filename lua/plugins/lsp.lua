@@ -62,6 +62,12 @@ return {
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 				callback = function(event)
+					vim.lsp.completion.enable(true, event.data.client_id, event.buf, {
+						autotrigger = true,
+						convert = function(item)
+							return { abbr = item.label:gsub("%b()", "") }
+						end,
+					})
 					-- NOTE: Remember that Lua is a real programming language, and as such it is possible
 					-- to define small helper and utility functions so you don't have to repeat yourself.
 					--

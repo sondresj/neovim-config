@@ -1,5 +1,5 @@
 return {
-	"echasnovski/mini.hipatterns",
+	"nvim-mini/mini.hipatterns",
 	version = false,
 	config = function()
 		local hipatterns = require("mini.hipatterns")
