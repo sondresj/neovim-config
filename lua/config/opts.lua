@@ -12,9 +12,9 @@ vim.o.relativenumber = true
 vim.o.mouse = "a"
 vim.o.virtualedit = "block"
 
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menu,menuone,noselect,popup,fuzzy"
-vim.o.pumheight = 10
+-- vim.o.pumheight = 10
 
 vim.o.undofile = true
 vim.o.undolevels = 10000
@@ -52,7 +52,6 @@ vim.g.editorconfig = true
 vim.o.smartindent = true
 vim.o.breakindent = true
 vim.o.linebreak = true
-vim.o.list = true
 vim.o.ruler = false
 vim.o.wrap = true
 
