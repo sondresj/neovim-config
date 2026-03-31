@@ -1,6 +1,2 @@
-return {
-	"nvim-mini/mini.pairs",
-	version = false,
-	enabled = false,
-	opts = {},
-}
+-- vim.pack.add({ "nvim-mini/mini.pairs"})
+-- require("mini.pairs").setup({})

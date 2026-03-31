@@ -1,4 +1,6 @@
 require("config.opts")
 require("config.keys")
 require("config.cmds")
-require("config.lazy")
+-- require("config.lazy")
+
+require("plugins")
