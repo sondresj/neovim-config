@@ -15,7 +15,10 @@ local opts = {
 	-- C-k: Toggle signature help (if signature.enabled = true)
 	--
 	-- See :h blink-cmp-config-keymap for defining your own keymap
-	keymap = { preset = "enter" },
+	keymap = {
+		preset = "enter",
+		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+	},
 
 	appearance = {
 		-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -58,7 +61,13 @@ local opts = {
 			},
 		},
 		ghost_text = { enabled = true, show_with_menu = false },
-		signature = { enabled = true, window = { winblend = 30 } },
+	},
+	signature = {
+		enabled = true,
+		window = {
+			winblend = 30,
+			show_documentation = false,
+		},
 	},
 
 	-- Default list of enabled providers defined so that you can extend it
@@ -75,5 +84,9 @@ local opts = {
 	fuzzy = { implementation = "prefer_rust_with_warning" },
 }
 -- opts_extend = { "sources.default" },
+
+-- NOTE: extending default config here causes recursive errors on everything when in insert mode
+-- local defaults = require("blink.cmp.config")
+-- blink.setup(vim.tbl_deep_extend("force", {}, defaults, opts))
 
 blink.setup(opts)

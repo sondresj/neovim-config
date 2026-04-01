@@ -18,7 +18,7 @@ vim.pack.add({
 	"https://github.com/stevearc/oil.nvim",
 	{ src = "https://github.com/3rd/image.nvim", name = "image" },
 	{ src = "https://github.com/Shatur/neovim-ayu", name = "ayu" },
-	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.x") },
+	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.10.x") },
 	{ src = "https://github.com/stevearc/conform.nvim", name = "conform" },
 })
 
