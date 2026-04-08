@@ -14,6 +14,9 @@ vim.o.virtualedit = "block"
 
 -- vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menu,menuone,noselect,popup,fuzzy"
+vim.o.complete = ".^5,t^3,w"
+vim.o.pummaxwidth = 40
+vim.o.pumborder = "rounded"
 -- vim.o.pumheight = 10
 
 vim.o.undofile = true
@@ -26,8 +29,8 @@ vim.o.smartcase = true
 
 vim.o.signcolumn = "yes"
 
-vim.o.updatetime = 250
-vim.o.timeoutlen = 800
+vim.o.updatetime = 400
+vim.o.timeoutlen = 600
 
 vim.o.splitright = true
 vim.o.splitbelow = true
@@ -50,6 +53,7 @@ vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.g.editorconfig = true
 vim.o.smartindent = true
+vim.o.smarttab = true
 vim.o.breakindent = true
 vim.o.linebreak = true
 vim.o.ruler = false
@@ -57,3 +61,5 @@ vim.o.wrap = true
 
 -- vim.lsp.inlay_hint.enable(false, nil)
 vim.o.smoothscroll = true
+vim.opt.shortmess:append("c")
+vim.o.autocomplete = true

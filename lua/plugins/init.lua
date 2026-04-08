@@ -1,39 +1,48 @@
+local gh = function(repo)
+	return "https://github.com/" .. repo
+end
+local cb = function(repo)
+	return "https://codeberg.org/" .. repo
+end
+
 vim.pack.add({
-	"https://github.com/folke/lazydev.nvim",
-	"https://github.com/goolord/alpha-nvim",
-	"https://github.com/ibhagwan/fzf-lua",
-	"https://github.com/j-hui/fidget.nvim",
-	"https://github.com/mason-org/mason-lspconfig.nvim",
-	"https://github.com/mason-org/mason.nvim",
-	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/nvim-mini/mini.clue",
-	"https://github.com/nvim-mini/mini.diff",
-	"https://github.com/nvim-mini/mini.hipatterns",
-	"https://github.com/nvim-mini/mini.icons",
-	"https://github.com/nvim-mini/mini.notify",
-	"https://github.com/nvim-mini/mini.statusline",
-	"https://github.com/nvim-mini/mini.tabline",
-	"https://github.com/nvim-treesitter/nvim-treesitter",
-	"https://github.com/rafamadriz/friendly-snippets",
-	"https://github.com/stevearc/oil.nvim",
-	{ src = "https://github.com/3rd/image.nvim", name = "image" },
-	{ src = "https://github.com/Shatur/neovim-ayu", name = "ayu" },
-	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.10.x") },
-	{ src = "https://github.com/stevearc/conform.nvim", name = "conform" },
+	-- gh("rafamadriz/friendly-snippets"),
+	-- { src = gh("saghen/blink.cmp"), version = vim.version.range("1.10.x") },
+	gh("folke/lazydev.nvim"),
+	gh("goolord/alpha-nvim"),
+	gh("ibhagwan/fzf-lua"),
+	gh("j-hui/fidget.nvim"),
+	gh("mason-org/mason-lspconfig.nvim"),
+	gh("mason-org/mason.nvim"),
+	gh("neovim/nvim-lspconfig"),
+	gh("nvim-mini/mini.clue"),
+	gh("nvim-mini/mini.diff"),
+	gh("nvim-mini/mini.hipatterns"),
+	gh("nvim-mini/mini.icons"),
+	gh("nvim-mini/mini.notify"),
+	gh("nvim-mini/mini.statusline"),
+	gh("nvim-mini/mini.tabline"),
+	gh("stevearc/oil.nvim"),
+	{ src = gh("3rd/image.nvim"), name = "image" },
+	{ src = gh("Shatur/neovim-ayu"), name = "ayu" },
+	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" },
+	{ src = gh("stevearc/conform.nvim"), name = "conform" },
 })
 
+require("fidget").setup({})
+require("mini.diff").setup({})
+require("mini.icons").setup({})
+require("mini.statusline").setup({})
+require("mini.tabline").setup({})
+
 require("plugins.ayu")
-require("plugins.blink")
+require("plugins.notify")
+require("plugins.greet")
 require("plugins.clue")
 require("plugins.fmt")
 require("plugins.fzf")
-require("plugins.greet")
 require("plugins.hip")
-require("plugins.image")
-require("plugins.line")
--- require("plugins.llm")
-require("plugins.lsp")
-require("plugins.notify")
+require("plugins.img")
 require("plugins.oil")
--- require("plugins.pairs")
-require("plugins.tree")
+require("plugins.ts")
+require("plugins.lsp")
