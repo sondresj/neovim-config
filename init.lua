@@ -6,3 +6,5 @@ require("config.cmds")
 require("config.lsp")
 
 require("plugins")
+
+require("config.status").setup({})

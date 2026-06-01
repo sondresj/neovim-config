@@ -21,5 +21,16 @@ require("oil").setup({
 		["<leader>h"] = { "actions.toggle_hidden", mode = "n" },
 		-- ['g\\'] = { 'actions.toggle_trash', mode = 'n' },
 	},
+	show_hidden = true,
 })
-vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil (fs editor)" })
+-- vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil (fs editor)" })
+vim.keymap.set("n", "<leader>e", function()
+	local oil = require("oil")
+	local util = require("oil.util")
+
+	oil.open()
+	util.run_after_load(0, function()
+		oil.open_preview({ preview = true })
+		-- oil.select({ preview = true })
+	end)
+end, { desc = "Open Oil (fs editor)" })

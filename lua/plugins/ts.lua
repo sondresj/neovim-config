@@ -23,7 +23,7 @@ require("nvim-treesitter").setup({
 	},
 	indent = { enable = true },
 })
-require("nvim-treesitter.install").install(nil, { force = true, summary = true })
+-- require("nvim-treesitter.install").install(nil, { force = true, summary = true })
 
 -- build = ":TSUpdate",
 -- main = "nvim-treesitter.configs", -- Sets main module to use for opts

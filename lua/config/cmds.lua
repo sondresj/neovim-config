@@ -7,18 +7,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("lsp_completion", { clear = true}),
+	group = vim.api.nvim_create_augroup("lsp_completion", { clear = true }),
 	callback = function(args)
 		local client_id = args.data.client_id
-		if not client_id then 
+		if not client_id then
 			return
 		end
 
 		local client = vim.lsp.get_client_by_id(client_id)
 		if client and client:supports_method("textDocument/completion") then
-			-- enable native lsp 
+			-- enable native lsp
 			vim.lsp.completion.enable(true, client_id, args.buf, {
-				autotrigger = true
+				autotrigger = true,
 			})
 		end
 	end,
@@ -49,20 +49,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("<leader>cd", vim.diagnostic.open_float, "[C]ode [D]iagnostics")
 
 		-- Find references for the word under your cursor.
-		map("gr", "<cmd>FzfLua lsp_references<CR>", "[G]oto [R]eferences")
+		map("<leader>gr", "<cmd>FzfLua lsp_references<CR>", "[G]oto [R]eferences")
 
 		-- Jump to the implementation of the word under your cursor.
 		--  Useful when your language has ways of declaring types without an actual implementation.
-		map("gI", "<cmd>FzfLua lsp_implementations<CR>", "[G]oto [I]mplementation")
+		map("<leader>gI", "<cmd>FzfLua lsp_implementations<CR>", "[G]oto [I]mplementation")
 
 		-- Jump to the definition of the word under your cursor.
 		--  This is where a variable was first declared, or where a function is defined, etc.
 		--  To jump back, press <C-t>.
-		map("gd", "<cmd>FzfLua lsp_definitions<CR>", "[G]oto [D]efinition")
+		map("<leader>gd", "<cmd>FzfLua lsp_definitions<CR>", "[G]oto [D]efinition")
 
 		-- WARN: This is not Goto Definition, this is Goto Declaration.
 		--  For example, in C this would take you to the header.
-		map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+		map("<leader>gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 		-- Fuzzy find all the symbols in your current document.
 		--  Symbols are things like variables, functions, types, etc.
