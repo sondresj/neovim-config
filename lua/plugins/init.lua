@@ -8,6 +8,7 @@ end
 vim.pack.add({
 	-- gh("rafamadriz/friendly-snippets"),
 	-- { src = gh("saghen/blink.cmp"), version = vim.version.range("1.10.x") },
+	-- gh("bombsimon/garmin-monkeyc.nvim"),
 	gh("folke/lazydev.nvim"),
 	gh("goolord/alpha-nvim"),
 	gh("ibhagwan/fzf-lua"),
@@ -27,6 +28,7 @@ vim.pack.add({
 	{ src = gh("Shatur/neovim-ayu"), name = "ayu" },
 	{ src = gh("nvim-treesitter/nvim-treesitter"), version = "main" },
 	{ src = gh("stevearc/conform.nvim"), name = "conform" },
+	{ src = gh("nickjvandyke/opencode.nvim"), version = vim.version.range("*") },
 })
 
 require("fidget").setup({})
@@ -35,6 +37,7 @@ require("mini.icons").setup({})
 require("mini.statusline").setup({})
 require("mini.tabline").setup({})
 
+-- require("plugins.monkey")
 require("plugins.ayu")
 require("plugins.notify")
 require("plugins.greet")
@@ -46,3 +49,4 @@ require("plugins.img")
 require("plugins.oil")
 require("plugins.ts")
 require("plugins.lsp")
+require("plugins.oc")
