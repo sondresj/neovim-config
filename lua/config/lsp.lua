@@ -32,3 +32,4 @@ vim.diagnostic.config({
 -- vim.lsp.enable("denols")
 -- vim.lsp.enable("rust_analyzer")
 -- vim.lsp.enable("tailwindcss")
+-- vim.lsp.enable("openscad_lsp")

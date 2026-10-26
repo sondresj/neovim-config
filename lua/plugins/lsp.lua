@@ -8,6 +8,7 @@ local ensure_installed = {
 	"tailwindcss",
 	"openscad_lsp",
 	"stylua", -- Used to format Lua code
+	"openscad_lsp",
 }
 
 require("mason").setup({})
